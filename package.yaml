@@ -1,0 +1,32 @@
+name:                mars-rover
+version:             0.1.0.0
+license:             MIT
+author:              "José Vte. Calderón"
+maintainer:          "jvcprod@hotmail.com"
+copyright:           "2019 José Vte. Calderón"
+
+extra-source-files:
+- README.md
+- LICENSE
+
+description:         Please see the README on Bitbucket at <https://bitbucket.org/jvcal/mars-rover/src#readme>
+
+dependencies:
+- base >=4.10 && <4.11
+- hspec
+- QuickCheck
+
+library:
+  source-dirs:
+  - src
+
+tests:
+  data-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - mars-rover
