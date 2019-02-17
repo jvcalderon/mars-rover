@@ -25,6 +25,12 @@ library:
   - Data
   - MarsRover
 
+executables:
+  mars-rover:
+    main: Main.hs
+    source-dirs:
+    - src
+
 tests:
   data-test:
     main:                Spec.hs
