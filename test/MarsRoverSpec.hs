@@ -21,3 +21,12 @@ spec = do
       command (Pos 1 1 E) R `shouldBe` Pos 1 1 S
       command (Pos 1 1 W) L `shouldBe` Pos 1 1 S
       command (Pos 1 1 W) R `shouldBe` Pos 1 1 N
+    it "[commPool] Should receive a position and command pool and return a new position" $ do
+      commPool (Pos 1 2 N) [L, M, L, M, L, M, L, M, M] `shouldBe` Pos 1 3 N
+      commPool (Pos 3 3 E) [M, M, R, M, M, R, M, R, R, M] `shouldBe` Pos 5 1 E
+      commPool (Pos 3 3 E) [] `shouldBe` Pos 3 3 E
+    it
+      "[strCommPool] Should receive a position and string-command (discarding wrong chars) pool and return a new position" $ do
+      strCommPool (Pos 1 2 N) "L M L M L M L M M" `shouldBe` Pos 1 3 N
+      strCommPool (Pos 1 2 N) "L, M, L, M, L, M, L, M, M" `shouldBe` Pos 1 3 N
+      strCommPool (Pos 1 2 N) "LMWWQDLMLMLDSWXSWMM" `shouldBe` Pos 1 3 N
