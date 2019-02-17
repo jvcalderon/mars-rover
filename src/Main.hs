@@ -5,20 +5,29 @@ import MarsRover
 
 main :: IO ()
 main = do
-  boundaries <- getLine
-  rover
-  rover
+  edges <- getLine
+  if gridFromStr edges == Nothing
+    then do
+      putStrLn "Invalid planet boundaries. Try again"
+      main
+    else do
+      doRover edges
+      doRover edges
+  where
+    doRover b = rover (lift . gridFromStr $ b)
+    lift (Just x) = x
 
-rover :: IO ()
-rover = do
-  position <- getLine
+rover :: Grid -> IO ()
+rover g = do
+  p <- getLine
   commPoolData <- getLine
-  if posFromStr position == Nothing
+  if posFromStr p == Nothing || pX (liftedPos p) > gX g || pY (liftedPos p) > gY g
     then do
       putStrLn "Invalid position. Try again"
-      rover
+      rover g
     else do
-      putStrLn . show $ (strCommPool (lift . posFromStr $ position) commPoolData)
+      putStrLn . show $ (boundedStrCommPool g (liftedPos p) commPoolData)
       putStr "\n"
   where
     lift (Just x) = x
+    liftedPos = lift . posFromStr

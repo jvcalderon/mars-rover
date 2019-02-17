@@ -20,3 +20,7 @@ spec = do
     it "[posFromStr] Should receive a string and maybe return a Position" $ do
       posFromStr "12 92 W" `shouldBe` Just (Pos 12 92 W)
       posFromStr "12 wX" `shouldBe` Nothing
+    it "[gridFromStr] Should receive a string and maybe return a Grid" $ do
+      gridFromStr "5 5" `shouldBe` Just (Grid 5 5)
+      gridFromStr "-5 5" `shouldBe` Nothing
+      gridFromStr "xxxx" `shouldBe` Nothing
