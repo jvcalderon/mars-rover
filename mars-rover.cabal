@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5cc3a7022fe51312decca4de8e1be5155b8151fa6db571c326fde6dd5f99a4ee
+-- hash: 1df4143ecef4ebfbdb82adca45cf33691ed6bedb8f5231e2d6a7202a8157af86
 
 name:           mars-rover
 version:        0.1.0.0
@@ -30,9 +30,9 @@ library
     , split
   exposed-modules:
       Data
-      Main
       MarsRover
   other-modules:
+      Main
       Paths_mars_rover
   default-language: Haskell2010
 

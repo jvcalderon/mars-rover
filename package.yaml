@@ -21,6 +21,9 @@ dependencies:
 library:
   source-dirs:
   - src
+  exposed-modules:
+  - Data
+  - MarsRover
 
 tests:
   data-test:
