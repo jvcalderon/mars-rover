@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9a50c7644123c619b972418227e6cf972d12a04fed632a1981b09fb4f66bac35
+-- hash: 5cc3a7022fe51312decca4de8e1be5155b8151fa6db571c326fde6dd5f99a4ee
 
 name:           mars-rover
 version:        0.1.0.0
@@ -26,6 +26,8 @@ library
       QuickCheck
     , base >=4.10 && <4.11
     , hspec
+    , regex-pcre
+    , split
   exposed-modules:
       Data
       Main
@@ -45,7 +47,10 @@ test-suite data-test
     , base >=4.10 && <4.11
     , hspec
     , mars-rover
+    , regex-pcre
+    , split
   other-modules:
+      DataSpec
       MarsRoverSpec
       Paths_mars_rover
   default-language: Haskell2010
