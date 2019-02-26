@@ -39,7 +39,14 @@ $ ./.stack-work/install/x86_64-osx/lts-11.10/8.2.2/bin/mars-rover
 To interact directly to Library (avoiding CLI wrapper) you can use GHC REPL:
 
 ```
-$ stack ghci
+$ stack ghci --no-load
+Prelude> :l src/MarsRover
+```
+
+To run the test suite:
+
+```
+$ stack test
 ```
 
 ## Usage
