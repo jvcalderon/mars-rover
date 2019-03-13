@@ -1,5 +1,8 @@
 # mars-rover
 
+[![Build Status](https://travis-ci.org/jvcalderon/mars-rover.svg?branch=master)](https://travis-ci.org/jvcalderon/mars-rover)
+[![Coverage Status](https://coveralls.io/repos/github/jvcalderon/mars-rover/badge.svg?branch=master)](https://coveralls.io/github/jvcalderon/mars-rover?branch=master)
+
 Mars Rover is a solution to exercise "[mars rover](./doc/EXERCISE.md)". It provides some interesting features:
 
 * Input data in CLI is validated (planet boundaries, coordinates, commands). You can't break it.
