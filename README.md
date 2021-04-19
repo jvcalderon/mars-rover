@@ -14,6 +14,15 @@ it could be used without grid boundaries if needed.
 
 ![An example of Mars Rover CLI](./doc/render1550425874765.gif?raw=true)
 
+## Dependencies
+
+In order to compile the project, you will need `pcre` C library. You can install it using homebrew or apt:
+
+```shell
+apt-get install pcre #for Linux
+brew install pcre #for Mac
+```
+
 ## Installation
 
 Use [Stack](https://docs.haskellstack.org/en/stable/README/) to install and run the project:
